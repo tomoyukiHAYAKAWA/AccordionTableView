@@ -3,13 +3,12 @@ import UIKit
 final class ViewModel: NSObject {
     enum Row {
         case title
+        case userName
     }
 
-    private var cells: [Row] = []
-
-    override init() {
-        cells.append(.title)
-    }
+    private var cells: [Row] = [.title, .userName]
+    private var name: String = "ティム・クック"
+    private var age: Int = 35
 
 }
 
@@ -23,6 +22,11 @@ extension ViewModel: UITableViewDataSource {
         switch cells[indexPath.row] {
         case .title:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell", for: indexPath) as? TitleViewCell else { return UITableViewCell() }
+            return cell
+        case .userName:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserNameCell", for: indexPath) as? UserNameCell else { return UITableViewCell() }
+            let params = UserNameCell.Params(name: name, age: age)
+            cell.configure(params: params)
             return cell
         }
     }

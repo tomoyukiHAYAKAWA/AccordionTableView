@@ -9,6 +9,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = viewModel
         tableView.register(UINib(nibName: "TitleViewCell", bundle: nil), forCellReuseIdentifier: "TitleViewCell")
+        tableView.register(UINib(nibName: "UserNameCell", bundle: nil), forCellReuseIdentifier: "UserNameCell")
     }
 
 }
