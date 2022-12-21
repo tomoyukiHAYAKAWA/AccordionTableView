@@ -21,7 +21,7 @@ extension ViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch cells[indexPath.row] {
         case .title:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TitleViewCell", for: indexPath) as? TitleViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as? TitleCell else { return UITableViewCell() }
             return cell
         case .userName:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserNameCell", for: indexPath) as? UserNameCell else { return UITableViewCell() }

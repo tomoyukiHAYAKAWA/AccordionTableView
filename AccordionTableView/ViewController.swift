@@ -8,7 +8,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = viewModel
-        tableView.register(UINib(nibName: "TitleViewCell", bundle: nil), forCellReuseIdentifier: "TitleViewCell")
+        tableView.register(UINib(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
         tableView.register(UINib(nibName: "UserNameCell", bundle: nil), forCellReuseIdentifier: "UserNameCell")
     }
 
